@@ -37,7 +37,7 @@ body._lock{
    background: #FF8126;
 }
 .arrow-right, .arrow-left{
-   text-align: center;
+   /* text-align: center; */
    display: block;
    width: 10px;
    height: 10px;
