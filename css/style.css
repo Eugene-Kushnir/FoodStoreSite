@@ -145,7 +145,7 @@ body._lock{
    cursor: pointer;
 }
 .menu_arrow::after{
-   content: url('/img/more.svg');
+   content: url('../img/more.svg');
    cursor: pointer;
    display: inline-block;
 }
@@ -389,8 +389,8 @@ body.mouse .menu_arrow:hover .sublink{
    margin-right: 15px;
 }
 .who_makes_bullet::before{
-   content: url('/img/who_makes_bullet.png');
-   background: url('/img/Ellipse-for-bullet.svg');
+   content: url('../img/who_makes_bullet.png');
+   background: url('../img/Ellipse-for-bullet.svg');
    display: inline-flex;
    justify-content: center;
    align-items: center;
@@ -427,7 +427,7 @@ body.mouse .menu_arrow:hover .sublink{
    left: 0;
    width: 100%;
    height: 100%;
-   background: url('/img/MaskGroup.png');
+   background: url('../img/MaskGroup.png');
    background-position: center;
    z-index: 1;
 }
@@ -547,7 +547,7 @@ body.mouse .menu_arrow:hover .sublink{
    left: 0;
    width: 100%;
    height: 100%;
-   background: url('/img/tell-friend-group.png');
+   background: url('../img/tell-friend-group.png');
    background-position: center;
    z-index: 1;
 }
@@ -760,7 +760,7 @@ footer{
    }
    .who_makes_why::before{
       content: '';
-      background: url('/img/markus-spiske-jHrW-l7NWfw-unsplash.jpg');
+      background: url('../img/markus-spiske-jHrW-l7NWfw-unsplash.jpg');
       background-position: center;
       background-size: cover;
       width: 100%;
