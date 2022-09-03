@@ -21,6 +21,9 @@ a{
    width: 91.4vw;
    margin: 0 auto;
 }
+button:hover{
+   cursor: pointer;
+}
 body._lock{
    position:fixed;
 }
@@ -97,13 +100,16 @@ body._lock{
    line-height: 21px;
    text-align: center;
 }
-.warning_close{
+.close_warning::after{
+   content: 'X';
    position: absolute;
    top: 15px;
    right: calc((100vw - 91.4vw)/2);
    width: 16px;
    height: 16px;
+   cursor: pointer;
 }
+
 /* header */
 .header{
    display: flex;
@@ -133,22 +139,34 @@ body._lock{
    position: relative;
 }
 .menu_arrow{
-   position: absolute;
+   position:absolute;
+   top: 2px;
    right: 0;
    cursor: pointer;
 }
-.menu_arrow._active{
+.menu_arrow::after{
+   content: url('/img/more.svg');
+   cursor: pointer;
+   display: inline-block;
+}
+body.mouse .menu_arrow:hover::after{
+   rotate: 180deg;
+}
+body.mouse .menu_arrow:hover .sublink{
+   display: block;
+}
+.menu_arrow._active::after{
    transform: rotate(-180deg);
    transition: all .3s;
 }
 .sublink{
    position: absolute;
-   left: 25px;
-   top: 25px;
+   left: -60px;
+   top: 15px;
    width: 15vw;
    text-align:left;
    display: none;
-   padding: 15px;
+   padding: 14px;
    background: white;
    z-index: 15;
 }
@@ -156,6 +174,7 @@ body._lock{
    font-weight: 400;
    font-size: 18px;
    line-height: 25px;
+   padding-bottom: 20;
 }
 .sublink.open{
    display: block;
@@ -271,11 +290,13 @@ body._lock{
    flex-direction: column;
    align-items: center;
 }
-.offers_card img{
+.offers_card_img{
    margin-bottom: 20px;
    border-radius: 20px 20px 0px 0px;
+   width: 100%;
+   height: 160px;
 }
-.offers_card_container h4{
+.offers_card_container h3{
    font-weight: 500;
    font-size: 18px;
    line-height: 27px;
@@ -322,7 +343,8 @@ body._lock{
 .why_reason{
    margin: 0 15px;
 }
-.why_reason img{
+.why_reason_icon{
+   height: 48px;
    margin-bottom: 20px;
 }
 .why_reason h3{
@@ -407,6 +429,7 @@ body._lock{
    height: 100%;
    background: url('/img/MaskGroup.png');
    background-position: center;
+   z-index: 1;
 }
 .our_partner{
    display: flex;
@@ -418,22 +441,27 @@ body._lock{
    color: #FFFFFF;
    margin-bottom: 30px;
 }
-.our_partner img{
+.our_partner_logo{
+   width: 100px;
+   height: 130px;
    margin-bottom: 30px;
 }
 .our_partner button{
       background: #FF8126;
       width: 330px;
-   height: 45px;
-   border-radius: 5px;
-   color: #FFFFFF;
+      height: 45px;
+      border-radius: 5px;
+      color: #FFFFFF;
+      z-index: 10;
 }
 /* surprise_someone */
 .surprise_someone{
    margin-bottom: 80px;
    display: flex;
 }
-.surprise_someone img{
+.surprise_someone_img{
+   width: 570px;
+   height: 432px;
    margin-right: 31px;
 }
 .surprise_someone_rigthPart{
@@ -521,9 +549,11 @@ body._lock{
    height: 100%;
    background: url('/img/tell-friend-group.png');
    background-position: center;
+   z-index: 1;
 }
 .media_icons{
    margin: 0 -15px;
+   z-index: 10;
 }
 .media_icons a{
    margin: 0 15px;
@@ -538,6 +568,8 @@ footer{
    font-size: 15px;
    line-height: 22px;
    margin-bottom: 15px;
+   cursor: pointer;
+   
 }
 .footer_links ul li{
    font-weight: 400;
@@ -660,38 +692,40 @@ footer{
    .navbar_list{
       flex-direction: column;
       align-items: flex-start;
-      margin: 0;
+      z-index: 1;
+      position: relative;
+      margin-bottom: 25px;
    }
    .navbar_list>li{
       font-weight: 500;
       font-size: 20px;
       line-height: 30px;
    }
-
-   .menu_arrow{
+   .menu_arrow._active::after{
       transform: rotate(-90deg);
-      right: auto;
    }
-   .menu_arrow._active{
-      transform: rotate(0deg);
+   .menu_arrow::after{
+      position: absolute;
+      top: -2px;
+      left: 0;
    }
-   .navbar_list>li{
-      padding: 15px 0;
+   .menu_arrow{
+      position: inherit;
    }
-   .list_link{
+   .sublink{
+      margin-top: -5px;
+      width: 100%;
+      position: static;
+      text-align: left;
+      margin-left: 30px;
+   }
+   .sublink>li{
       font-weight: 500;
-      font-size: 20px;
-      line-height: 30px;
-      margin: 0 15px 0 0;
+      font-size: 15px;
+      line-height: 22px;
    }
    .banner{
       margin-bottom: 30px;
-   }
-   .sublink{
-      width: 100%;
-      position:static;
-      text-align: left;
-      margin-left: 30px;
    }
    .latest_offers{
       margin-bottom: 50px;
@@ -752,7 +786,7 @@ footer{
    .surprise_someone_title{
       margin-bottom: 30px
    }
-    .surprise_someone img{
+    .surprise_someone_img{
       display: none;
     }
     .surprise_someone_rigthPart button{
