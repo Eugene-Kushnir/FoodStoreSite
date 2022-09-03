@@ -217,13 +217,10 @@ body.mouse .menu_arrow:hover .sublink{
    font-size: 9px;
    color: #FFFFFF;
 }
-/* main-banner */
+
 .banner{
-   /* background:url('/img/main-banner.jpg') no-repeat;
-   background-size: cover; */
    width: 100vw;
    position: relative;
-   /* margin-bottom: 80px; */
 }
 .banner img{
    position: absolute;
@@ -408,7 +405,7 @@ body.mouse .menu_arrow:hover .sublink{
 .who_makes_img{
    width: 100%;
    height: auto;
-   background: url('/img/markus-spiske-jHrW-l7NWfw-unsplash.jpg');
+   background: url('../img/markus-spiske-jHrW-l7NWfw-unsplash.jpg');
    background-position: center;
    background-size: cover;
    
