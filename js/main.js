@@ -18,7 +18,7 @@ let isMobile = {
 	Windows: function() {return navigator.userAgent.match(/IEMobile/i);},
 	any: function() {return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
 };
-		// let body=document.querySelector('body');
+
 if(isMobile.any()){
 		body.classList.add('touch');
       for(let i=0; i<menu_arrow.length; i++){
