@@ -9,6 +9,7 @@ const cart = document.querySelector('.cart');
 const profile = document.querySelector('.profile');
 const header__menu = document.querySelector('.header__menu');
 const header = document.querySelector('.header');
+const prof_cart_cont = document.querySelector('.prof-cart-cont');
 const main = document.querySelector('.main');
 const body = document.body;
 let isMobile = {
@@ -77,7 +78,8 @@ dot_menu.addEventListener('click', () =>{
    header__menu.classList.toggle('menu-active');
    header.classList.toggle('menu-active');
    body.classList.toggle('_lock');
-   main.classList.toggle('_lock');
+   prof_cart_cont.classList.toggle('menu-active');
+   main.classList.toggle('menu-active');
 
    // warning.style = 'display: none';
 })
@@ -90,6 +92,7 @@ document.addEventListener('keydown', (e)=>{
          header__menu.classList.remove('menu-active');
          header.classList.remove('menu-active');
          body.classList.remove('_lock');
-         main.classList.remove('_lock');
+         prof_cart_cont.classList.remove('menu-active');
+         main.classList.remove('menu-active');
    }
 })
