@@ -1,8 +1,6 @@
 const close_warning = document.querySelector('.close_warning');
 const warning = document.querySelector('.warning');
 const menu_arrow = document.querySelectorAll('.menu_arrow');
-const wrapper = document.querySelector('.wrapper');
-const menu__navbar = document.querySelector('.menu__navbar');
 const sublink = document.querySelectorAll('.sublink');
 const dot_menu = document.querySelector('.dot_menu');
 const cart = document.querySelector('.cart');
@@ -35,15 +33,15 @@ if(isMobile.any()){
                      menu_arrow[i].classList.remove('_active');
                      sublink[i].classList.remove('open');
                      }
-               })
-         })
+               });
+         });
       }
 } else {
    body.classList.add('mouse');
 }
 close_warning.addEventListener('click', ()=>{
    warning.style = 'display: none';
-})
+});
 
 const swiper = new Swiper('.swiper', {
    grabCursor: true,
@@ -82,7 +80,7 @@ dot_menu.addEventListener('click', () =>{
    main.classList.toggle('menu-active');
 
    // warning.style = 'display: none';
-})
+});
 
 document.addEventListener('keydown', (e)=>{
    if (e.key == 'Escape' && dot_menu.classList.contains('active')){
@@ -95,4 +93,4 @@ document.addEventListener('keydown', (e)=>{
          prof_cart_cont.classList.remove('menu-active');
          main.classList.remove('menu-active');
    }
-})
+});
