@@ -16,6 +16,14 @@ a{
    font-weight: 700;
    font-size: 40px;
    line-height: 48px;
+   color: #1F1F1F;
+}
+.span_decoration{
+   color:#FF8126;
+   font-family: 'Cormorant';
+   font-weight: 700;
+   font-size: 40px;
+   line-height: 48px;
 }
 ._container{
    width: 91.4vw;
@@ -28,9 +36,6 @@ button:hover, .offers_card_container button:hover,.our_partner button:hover,.sur
 }
 body._lock{
    position:fixed;
-}
-.span_decoration{
-   color:#FF8126;
 }
 .footer_link h4:hover, .footer_link li ul li:hover{
    text-decoration: underline;
@@ -155,9 +160,8 @@ body._lock{
    text-decoration: underline;
 }
 .menu_arrow{
-   position:absolute;
-   top: 2px;
-   right: 3px;
+   position:relative;
+   margin: 0 20px 0 -13px;
    cursor: pointer;
 }
 .menu_arrow::after{
@@ -609,11 +613,9 @@ footer{
 }
 .footer_link{
    padding: 0 20px;
-}
-.footer_link li ul{
    margin-bottom: 70px;
 }
-.footer_links ul li{
+.footer_link ul li{
    font-weight: 400;
    font-size: 15px;
    line-height: 22px;
@@ -767,6 +769,9 @@ footer{
       font-size: 20px;
       line-height: 30px;
    }
+   .menu_arrow{
+      top: 2px;
+   }
    .menu_arrow._active::after{
       transform: rotate(360deg);
    }
@@ -782,6 +787,7 @@ footer{
    .sublink{
       margin-top: -5px;
       width: 100%;
+      padding: 14px 0 0;
       position: static;
       text-align: left;
       margin-left: 30px;
@@ -821,8 +827,11 @@ footer{
       margin-bottom: 100px;
       display: block;
    }
-   .who_makes_block h2{
+   .who_makes_block .span_decoration, .who_makes_block ._title{
       margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
    }
    .who_makes_block h3{
       margin-bottom: 20px;
@@ -851,6 +860,11 @@ footer{
    .surprise_someone{
       margin-bottom: 100px;
    }
+   .surprise_someone h2, .surprise_someone h2 .span_decoration{
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+   }
    .surprise_someone_title{
       margin-bottom: 30px
    }
@@ -864,11 +878,17 @@ footer{
       margin-bottom: 100px;
     }
     .instagram_title{
-      margin-bottom: 30px
-    }
-    .instagram_title{
+      margin-bottom: 30px;
       width: 91.4vw;
       overflow: hidden;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+    }
+    .instagram_title span{
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
     }
     .swiper-button-prev,.swiper-button-next {
       display: none;
@@ -899,24 +919,24 @@ footer{
     .footer_links{
       display: flex;
       flex-wrap: wrap;
-      margin-bottom: 70px;
+      margin-bottom: 10px
     }
-    .footer_links h4{
+    .footer_link h4{
       font-size: 20px;
       line-height: 30px;
       margin-bottom: 28px;
     }
-    .footer_links ul{
+    .footer_link ul{
       margin: 0 -10px;
     }
-    .footer_links ul li{
-      margin: 0 10px;
+    .footer_link ul li{
+      margin: 0 10px 10px;
       font-size: 20px;
       line-height: 30px;
     }
 
-    footer:last-child{
-      margin-bottom: -35px;
+   .footer_link:last-child{
+      margin-bottom: 36px;
     }
 }
 
