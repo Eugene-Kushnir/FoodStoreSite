@@ -32,7 +32,7 @@ body._lock{
 .span_decoration{
    color:#FF8126;
 }
-.footer_links h4:hover, .footer_links li:hover{
+.footer_link h4:hover, .footer_link li ul li:hover{
    text-decoration: underline;
 }
 .media_icons a img, .wrapper_ellipse, .header__logo a img,.footer_logo a img{
@@ -110,6 +110,7 @@ body._lock{
    font-size: 14px;
    line-height: 21px;
    text-align: center;
+   transition: all 0.3s ease  ;
 }
 .close_warning::after{
    content: url('../img/close.png');
@@ -124,6 +125,7 @@ body._lock{
 /* header */
 .header{
    display: flex;
+   top: 0;
    padding: 20px 0;
    justify-content: space-between
 }
@@ -182,20 +184,21 @@ body.mouse .menu_arrow:hover .sublink{
    text-align:left;
    display: none;
    padding: 14px;
-   background: white;
    z-index: 15;
    animation: example 1s ease-in-out;
+}
+.sublink li{
+   background: #ffff;
+   padding: 10px;
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 16px;
+   padding-bottom: 20;
 }
 @keyframes example {
    0% {transform: translateY(-5px)}
    100% {transform: translateY(0)}
  }
-.sublink>li{
-   font-weight: 400;
-   font-size: 18px;
-   line-height: 25px;
-   padding-bottom: 20;
-}
 .sublink.open{
    display: block;
 }
@@ -203,7 +206,7 @@ body.mouse .menu_arrow:hover .sublink{
    text-decoration: underline;
 }
 .sublink li{
-   margin: 10px 0;
+   margin: 0;
 }
 .header_icon{
    display: flex;
@@ -222,6 +225,7 @@ body.mouse .menu_arrow:hover .sublink{
 }
 .prof-cart-cont{
    display: flex;
+   display: hidden;
 }
 .cart{
    position: relative;
@@ -299,7 +303,7 @@ body.mouse .menu_arrow:hover .sublink{
 .latest_offers_cards{
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
+   justify-content: center;
    margin: -15px -10px;
 }
 .offers_card{
@@ -588,13 +592,26 @@ footer{
    display: flex;
    justify-content: space-between;
 }
+.footer_logo{
+   margin-right: 86px;
+}
+.footer_links{
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
 .footer_links h4{
    font-weight: 500;
    font-size: 15px;
    line-height: 22px;
    margin-bottom: 15px;
    cursor: pointer;
-   
+}
+.footer_link{
+   padding: 0 20px;
+}
+.footer_link li ul{
+   margin-bottom: 70px;
 }
 .footer_links ul li{
    font-weight: 400;
@@ -611,7 +628,8 @@ footer{
       padding: 10px 0;
    }
    .header__menu{
-      display: none;
+      /* display: none; */
+      opacity: 0;
    }
    .header__logo{
       position: absolute;
@@ -702,20 +720,21 @@ footer{
     }
    .header__menu.menu-active{
       display: block;
+      opacity: 1;
       overflow-y: scroll;
       overflow-x: hidden;
+      transition: all 0.5s ease;
    }
    .header.menu-active{
       height: 100vh;
       display: flex;
       flex-direction: column;
-      transition: all 0.5s ease;
+      transition: all 0.5s;
    }
    .header.menu-active .header__logo{
       position: relative;
       margin-bottom: 139px;
    }
-
    .header_icon{
       position: absolute;
       top: 40px;
@@ -726,7 +745,7 @@ footer{
       align-items: flex-start;
       z-index: 1;
       position: relative;
-      margin-bottom: 25px;
+      margin-bottom: 55px;
    }
    .navbar_list>li{
       margin-bottom: 30px;
@@ -769,13 +788,14 @@ footer{
       margin-bottom: 20px;
    }
    .latest_offers_cards{
-      justify-content: center
+      justify-content: center;
    }
    .why_choose_container{
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin: -25px -15px;
+      margin: -25px auto -15px;
+      max-width: 600px;
    }
    .why_reason{
       text-align: center;
@@ -786,6 +806,7 @@ footer{
    }
    .who_makes{
       margin-bottom: 100px;
+      display: block;
    }
    .who_makes_block h2{
       margin-bottom: 10px;
@@ -799,22 +820,21 @@ footer{
       background-position: center;
       background-size: cover;
       width: 100%;
-      height: 140px;
+      height: calc(91.4vw*0.477848);
       display: block;
       margin-bottom: 17px;
+      transition: all 0.5s ease;
    }
    .who_makes_img{
       display: none;
    }
    .who_makes_button{
-      width: 91.4vw;
+      margin: 0 auto;
     }
    .our_partner{
       margin-bottom: 50px;
    }
-   .our_partner button{
-      width: 91.4vw;
-    }
+
    .surprise_someone{
       margin-bottom: 100px;
    }
@@ -858,11 +878,14 @@ footer{
     footer{
       flex-direction: column;
     }
+
     .footer_logo{
       margin: 0 auto;
       padding-bottom: 73px;
     }
     .footer_links{
+      display: flex;
+      flex-wrap: wrap;
       margin-bottom: 70px;
     }
     .footer_links h4{
@@ -870,14 +893,20 @@ footer{
       line-height: 30px;
       margin-bottom: 28px;
     }
+    .footer_links ul{
+      margin: 0 -10px;
+    }
     .footer_links ul li{
+      margin: 0 10px;
       font-size: 20px;
       line-height: 30px;
     }
+
     footer:last-child{
       margin-bottom: -35px;
     }
 }
+
 @media only screen and (max-width: 600px){
    .our_partner{
       height: 478px;
@@ -926,9 +955,6 @@ footer{
       width: 100%;
    }
 
-   .offers_card_container button{
-      width: 17.96875vw;
-   }
    .swiper-slide{
       width: 14.53125vw;
       height: auto;
@@ -937,6 +963,11 @@ footer{
       width: 12.2vw;
       height: auto;
    }  
+}
+@media only screen and (max-width: 374px){
+   .our_partner button{
+      width: 91.4vw;
+   }
 }
 @media only screen and (max-width: 321px){
    .swiper-slide{
@@ -947,8 +978,18 @@ footer{
       width: 64vw;
       height: auto;
       margin: 20.97px;
-   }  
+   }
 }
+
+@media only screen and (max-width: 440px){
+   .warning_container h4{
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 15px;
+      transition: all 0.3s ease;
+   }
+}
+
 
 
 

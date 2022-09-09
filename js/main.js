@@ -9,6 +9,7 @@ const cart = document.querySelector('.cart');
 const profile = document.querySelector('.profile');
 const header__menu = document.querySelector('.header__menu');
 const header = document.querySelector('.header');
+const main = document.querySelector('.main');
 const body = document.body;
 let isMobile = {
 	Android: function() {return navigator.userAgent.match(/Android/i);},
@@ -76,7 +77,9 @@ dot_menu.addEventListener('click', () =>{
    header__menu.classList.toggle('menu-active');
    header.classList.toggle('menu-active');
    body.classList.toggle('_lock');
-   warning.style = 'display: none';
+   main.classList.toggle('_lock');
+
+   // warning.style = 'display: none';
 })
 
 document.addEventListener('keydown', (e)=>{
@@ -87,5 +90,6 @@ document.addEventListener('keydown', (e)=>{
          header__menu.classList.remove('menu-active');
          header.classList.remove('menu-active');
          body.classList.remove('_lock');
+         main.classList.remove('_lock');
    }
 })
